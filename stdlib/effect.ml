@@ -12,8 +12,10 @@
 (*                                                                        *)
 (**************************************************************************)
 
-type 'a t = 'a eff = ..
+type 'a t (*= 'a eff*) = ..
 external perform : 'a t -> 'a = "%perform"
+
+type ('a, 'b) continuation
 
 type exn += Unhandled: 'a t -> exn
 exception Continuation_already_resumed
