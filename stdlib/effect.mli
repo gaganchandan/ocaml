@@ -22,8 +22,10 @@
 
     @since 5.0 *)
 
-type 'a t = 'a eff = ..
+type 'a t (* = 'a eff *) = ..
 (** The type of effects. *)
+
+type ('a, 'b) continuation
 
 exception Unhandled : 'a t -> exn
 (** [Unhandled e] is raised when effect [e] is performed and there is no
