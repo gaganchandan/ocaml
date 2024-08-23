@@ -30,6 +30,12 @@ _______________
 
 ### Runtime system:
 
+- #13364: Emit major slice counters in the runtime events.
+  (KC Sivaramakrishnan and Sadiq Jaffer, review by Gabriel Scherer)
+
+- #13382: Add more documentation for Runtime_events types
+  (Sadiq Jaffer, review by Tim McGilchrist, Miod Vallat and KC Sivaramakrishnan)
+
 - #13272: Allow maximum number of domains to be specified as a OCAMLRUNPARAM
   parameter.
   (KC Sivaramakrishnan, review by Guillaume Munch-Maccagnoni, Miod Vallat,
@@ -131,11 +137,9 @@ _______________
   unsupported native backends (POWER, riscv64 and s390x)
   (Miod Vallat, review by Nicolás Ojeda Bär)
 
-- #7241, #12555, #13076, #13138: fix a soundness bug in the
-  pattern-matching compiler when side-effects mutate the scrutinee
-  during matching.
-  Note that #7241 is not fully fixed yet, see the issue for the
-  current status.
+- #7241, #12555, #13076, #13138, #13338, #13152, #13153:
+  fix a soundness bug in the pattern-matching compiler
+  when side-effects mutate the scrutinee during matching.
   (Gabriel Scherer, review by Nick Roberts)
 
 - #13179: Fix evaluation of toplevel lets in classes containing
@@ -181,6 +185,11 @@ _______________
   (Gabriel Scherer,
    review by KC Sivaramakrishnan, Miod Vallat and Nicolás Ojeda Bär,
    report by Vesa Karvonen)
+
+- #13197: Dynarray.blit, which allows to extend the destination
+  dynarray (0 <= dst_pos <= dst_length).
+  (Gabriel Scherer, report by Hazem Elmasry,
+   review by Olivier Nicole, Hazem Elmasry and Nicolás Ojeda Bär)
 
 * #13240: Add Uchar.seeded_hash, Change Uchar.hash implementation.
   Previously, Uchar.hash was aliased to Uchar.to_int. If you need that behavior,
